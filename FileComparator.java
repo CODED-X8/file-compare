@@ -23,7 +23,7 @@ public class FileComparator {
             }
 
             try (FileInputStream f1 = new FileInputStream(file1Path);
-                 FileInputStream f2 = new FileInputStream(file2Path)) {
+                    FileInputStream f2 = new FileInputStream(file2Path)) {
 
                 byte[] buffer1 = new byte[bufferSize];
                 byte[] buffer2 = new byte[bufferSize];
@@ -94,5 +94,6 @@ public class FileComparator {
 
         double duration = (endTime - startTime) / 1_000_000_000.0;
         System.out.printf("Comparison took %.4f seconds.%n", duration);
+        scanner.close();
     }
 }
